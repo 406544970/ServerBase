@@ -40,7 +40,7 @@ public class HelloController {
     /**
      * @return 返回测试布尔值
      */
-    @RequestMapping(value = "isGet",method = RequestMethod.GET)
+    @RequestMapping(value = "/isGet",method = RequestMethod.GET)
     public boolean isGet(){
         return true;
     }
