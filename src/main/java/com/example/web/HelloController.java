@@ -6,9 +6,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
-import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,8 +24,8 @@ public class HelloController {
         this.version = "0.0.1";
     }
 
-    @Value("${liangHaoSign}")
-    private String liangHaoSign;
+//    @Value("${liangHaoSign}")
+//    private String liangHaoSign;
     @Autowired
     private DiscoveryClient client;
 
@@ -45,17 +43,19 @@ public class HelloController {
     @Value("${spring.application.name}")
     private String springApplicationName;
 
-    @PostMapping("/liangHaoSign")
-    public String getLiangHaoSign() {
-        return this.liangHaoSign;
-    }
+//    @PostMapping("/liangHaoSign")
+//    public String getLiangHaoSign() {
+//        return this.liangHaoSign;
+//    }
 
     /**
      * @return 返回当前版本号
      */
     @RequestMapping("/myVersion")
     public String myVersion() {
+        System.out.println("adsfa");
         return String.format("Version is %s;", this.version);
+
     }
 
     /**
