@@ -53,7 +53,6 @@ public class HelloController {
      */
     @RequestMapping("/myVersion")
     public String myVersion() {
-        System.out.println("adsfa");
         return String.format("Version is %s;", this.version);
 
     }
