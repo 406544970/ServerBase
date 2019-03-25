@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import static com.netflix.discovery.DiscoveryManager.*;
+
 
 /**
  *
@@ -92,7 +94,7 @@ public class HelloController {
 
     @RequestMapping(value = "/downLine", method = RequestMethod.GET)
     public String downLine() {
-        DiscoveryManager.getInstance().shutdownComponent();
+        getInstance().shutdownComponent();
         return String.format("ApplicationName\"%s\"(Port:%s) is downLine.", this.springApplicationName, this.port);
     }
 
